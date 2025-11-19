@@ -94,6 +94,9 @@ Integrates with TTS Voice Wizard! (requires pre-release v1.6.8.5+).
   - Fetches lyrics directly from Spotify’s internal endpoint.
   - Only compatible with Spotify playback.
   - **Requires** your `sp_dc` cookie (see [Syrics Wiki](https://github.com/akashrchandran/syrics/wiki/Finding-sp_dc)).
+  - **Requires** Microsoft edge to be downloaded and located at `C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`.
+     - Most windows computers will already have this installed by default.
+     - I may also add Chromium as a secondary option if there are those who do not wish to have Microsoft Edge installed.
   - **It will take a few seconds** once starting the program to get spotify lyrics initially. Be patient.
 #### LRCLib
   - Uses the LRCLib open database for lyrics.
