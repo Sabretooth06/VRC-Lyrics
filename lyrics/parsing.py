@@ -3,6 +3,9 @@ def lrc_to_dictionary(lrc):
     lrc_dict = {}
 
     for line in lines:
+        if "]" not in line:
+            print(f"LRC API error, invalid lyrics format: {line}")
+            return None
         timestamp, lyric = line.split(']', 1)
         timestamp = timestamp[1:]
         lyric = lyric.strip()
