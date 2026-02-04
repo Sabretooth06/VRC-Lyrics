@@ -14,15 +14,15 @@ class SpotifyPlayback(BasePlayback):
         self.id = None
         self.album_cover = None
         self._last_id = None
-        self.client_id = client_id
 
     def fetch_playback(self):
         try:
             data = self.spotify.current_playback()
         except requests.exceptions.ConnectionError:
-            auth_manager = spotipy.SpotifyPKCE(client_id=self.client_id, redirect_uri=redirect_uri, scope=scope)
-            self.spotify = spotipy.Spotify(auth_manager=auth_manager)
-            data = self.spotify.current_playback()
+            try:
+                data = self.spotify.current_playback()
+            except Exception:
+                data = None
         if not data or not data['item']:
             return False
 
